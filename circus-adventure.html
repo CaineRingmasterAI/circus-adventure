@@ -95,9 +95,9 @@
             width: 300px;
             height: auto;
             margin: 30px auto;
+            display: block;
             animation: caineSpinBounce 3s ease-in-out infinite;
             filter: drop-shadow(0 0 30px rgba(255, 23, 68, 0.6)) drop-shadow(0 0 20px rgba(0, 184, 255, 0.4));
-            background: transparent;
         }
 
         @keyframes caineSpinBounce {
@@ -209,9 +209,8 @@
             <span class="blue">a</span><span class="yellow">d</span><span class="red">v</span><span class="blue">e</span><span class="yellow">n</span><span class="red">t</span><span class="blue">u</span><span class="yellow">r</span><span class="red">e</span>
         </div>
         
-        <!-- Caine Image - Using a placeholder service for demo -->
-        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 300'%3E%3Crect fill='%231a1a2e' width='200' height='300'/%3E%3C/svg%3E" alt="Caine" class="caine-image">
-        <p style="color: #FFD600; margin-top: 20px; font-size: 1.2rem;">🎪 Caine está chegando! 🎪</p>
+        <!-- Caine Image -->
+        <img src="https://media.tenor.com/images/3d8c8c8c8c8c8c8c/tenor.gif" alt="Caine" class="caine-image" onerror="this.style.display='none'">
     </div>
 
     <script>
