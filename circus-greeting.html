@@ -21,13 +21,6 @@
             overflow: hidden;
         }
         
-        .container {
-            position: relative;
-            text-align: center;
-            padding: 40px;
-            max-width: 800px;
-        }
-        
         .stars {
             position: absolute;
             top: 0;
@@ -49,6 +42,14 @@
         @keyframes twinkle {
             0%, 100% { opacity: 0.3; }
             50% { opacity: 1; }
+        }
+        
+        .container {
+            position: relative;
+            text-align: center;
+            padding: 40px;
+            max-width: 900px;
+            z-index: 10;
         }
         
         h1 {
@@ -140,6 +141,20 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+        
+        .clown-image {
+            max-width: 400px;
+            width: 100%;
+            margin: 40px 0;
+            filter: drop-shadow(0 10px 30px rgba(255, 23, 68, 0.4));
+            animation: bounce-clown 2.5s ease-in-out infinite;
+        }
+        
+        @keyframes bounce-clown {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-20px) rotate(-2deg); }
+            75% { transform: translateY(-20px) rotate(2deg); }
+        }
     </style>
 </head>
 <body>
@@ -169,6 +184,8 @@
             <span class="sparkles">✨</span>
             <span class="text-yellow">adventure</span>
         </div>
+        
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADTAomsAAAACXBIWXMAAA7DAAAOwwHHb6thAAAgAElEQVR4nO2deXxc1Xn/n3PPnZm7M7M7M5pRbCzHxti2EwxxSEl+xJCElEBTStImbRrahpa2aUtpN9K2aZuWtqQpbQIhJCULEJqEkpDgxOZHCdgm2MZ4t2R5t2ZGM9Kd953zfP/4njOzO7Mzq1mStJ55v17z0sw5986c93zP8zzP+5yxTBPNZjOZTIZsNkvBYJBkMkk2m2V4eJixsTGSySSJRIILFy7w0Y9+lFQqRTgcZmBggImJCebm5pienubIkSPMzs5SSUmJfOL27ds5ceIEBoOBbDZLLpdjdXWVkpISotEoFouFsbExWltbPzCl/uUvfxmv10s4HCYZHI4nz86doKSkBMuyXkpPT9+MtlrJZDJcuHCBVCpFKpUiHo/j9/spFApkMhlisRiZTIapqSlOnDhBX18ftbW1HDt2jK985Sv4/X5WVlZYWlpiZGSEtrY2RkdHaW5u/kBpf/3rX/P5z3+eVCpFIpEglUoxPz/P3NwcbrcbAJvNxvj4+AckFe6///64tEOlUikuXLjA1NQUY2NjLC4ukslkyGQyrKyskMvlyOVyFIvFQqFQYHx8nGg0SixWKOy9e/dSW1tLIpHg2rVrLC4ukkgkePnll3nssceYmZkhl8tRKBSwWq1cuxbRxNJWEWMxQR7VxNf1/X0YX1WsVuuL3d3dLz388MM/9/l8bx4/fhyvZ0gQvtLS0urb29v5wQ9+wL/8y78QCoU4cuQIP/nJTwiFQrz44ovU19dTW1vLs88+y+9///sfqJ3x+Xny+TyZTIalpaXXGhsb3+7u7ubEiROMj4+ztraG3+/nypUr78xm7+d3q5QqEv2nHR0dL1x55ZUfslgs7zU0NDQ+88wzbNu2jS996Ut8/OMfp729ne9973s/T5P5P/K90Lq6Ooqnl5ubG7/lllt+/sEHH+Sf/umf+Pb3v891eMkWb3FxEavVyn/913+xb98+vvnNb/KpT32K//iP/+BXv/oVra2tfOhDH+K5557j3LlztLS0UFBQwP79+z+QdnzxxRc5cOAA77//PisrK3g8HvL5/AWfz/d6W1sb1113HW63G7fbzeHDh9+xq/2nHR0dPzp58iS33HIL3/nOdxgaGqK3t5eJiQk++tGPUlFRweTkJCdOnPjAVZdVFM3Nzf/d2dl59QsvvMDo6CjPPPMMMzMztLS00NXVxSc+8QmGhob48Y9/zO233/6BVkC5XI7FxUWmpqbo6+ujrKyMZDLJ+vr6qVwudzCXy73d29vL5ORkUbhx48a/2bp16y8+8YlPlFZWVlJdXU1NTQ11dXW/unPHDqb/8hcePnyYn/3sZ7z00kvcfvvtbFu0lJ/+4hd88pOf5I9//CP5fJ4TJ06QTCZpb2+nvr7+A5UEP/jBDzh16hRPPvkkCwsLAFy6dImSkhLKysro7e3lj/70T3nggQdYW1vj85//PNeuXSMQCLxpSKdVZcKcJo41DX6u2+2+dOrUKb71rW+xb98+vvvd7/Kv//qvPPnkk3zrW9/i+vXr/OhHP+Ldd9+lqamJ3/3ud3z3u9/lrrvuYmlpiW9+85s8+eSTnDlzhuPHj/O1r32N/v5+otEoTz75JIlEgs2bN/PGG2/wox/9iMHBQSYmJvibn/2c1tZW/v7v/54dO3Zw7Ngxfvazn/Nv//Zv9PX1sWfPHv72b/+WO+64g0OHDvHSSy+xY8cO9u/f/4FKlvvvv5+lpaXXfD4fV69e5ezZs5w5c4ZDhw7R1dVFZ2cnt912G263mwceeIB3331XDCuP28nPfvYzdu/ezde+9jU+8YlP8Prrr/Pmm2/y61//mp/+9Kf8+te/pqWlhV/84hf8+te/5ty5c3zve9/jmWee4dOf/jR/+Zd/yZ133snBgwd5+eWXeeKJJ3j00Ufp7u5mbGxM/PqJEyeYmpriy1/+MpcuXeLHP/4x/f39/M3f/A1/8Rd/wU9+8hO+973vkclkePrpp/nRj37EkSNHeOGFF/j2t7/N4cOHuWvnTk6dOvWBVkw/+tGP2LNnD//xH/9BZ2cnDz/8ME899RQPPPAA3d3dVFVVcc8991BWVkZvby8nT54Uw9Q0TQqFAk6nm/LycqxWK6FQSAwxv9/PpUuX6OjoYHx8nHQ6zcWLF/nkJz9JPp8nHo8zOTnJ/Pw8xWKRRCJBX18fN998M/v27eMzn/kM586dY3BwkL6+Po4cOcK1a9fYsmWL8INzQ4+bN2/2tba2IkkSQ0NDYtg5e/YstbW1Njsdo8vBuU1v85gkSQoGg9TV1RGPx4nH43zt61+zPP744/zs57/guutmWFxc5MEHH8AwDI4dO8ajjz7K6dOnuXbtGg8//DDHjh0TfvCZZ57h7NmzLCwsMDMzw5kzZ/jqV7/KiRMn+MxnPkNzc7Pwf9u2bePAgQN88pOf5Be/+AX3339/8WyODxoaGkZBEFheXibz+c/LgmR3dmJ6+w94OyG0Hrdp+PbOahnI0d+/JGVSaWLjO8kZA9icU9H2sRYXJe5KGZzK1N5JXqgfQaG8F++Md+fR9RN8sn4CTWGvN6Nk+dO9z3vn4R/c9Kpvz6fNzHqxXFo3A6sOqd2eifFeFxQH+GqCiMCQakDu8mE1Vwq+sHF5Hn2oZfKiBksmqDyVMEjvnmEUa7CiOhAGQ7RyC3HiEyfv5DmGK9CXSFjEv8b4aKBEd8eQvSkS4J5pLVbqoOO/AUjNzMfZaKZcyqPTvQiqD2k5EeJfFZkfY6ecJxdY1eN3rEJbY5qx5L8pW0xRZPYd0t6kKu5XZVh0ijaDEa4nE==" alt="Palhaço do Circo" class="clown-image">
         
         <div class="decorative">🎭 🎪 🎨 🎪 🎭</div>
     </div>
