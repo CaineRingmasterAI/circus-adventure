@@ -18,7 +18,7 @@
             min-height: 100vh;
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
             font-family: 'Arial Black', sans-serif;
-            overflow: hidden;
+            overflow-y: auto;
         }
 
         /* Animated stars background */
@@ -50,13 +50,18 @@
             z-index: 10;
             text-align: center;
             padding: 40px;
+            background: rgba(10, 10, 20, 0.7);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            max-width: 600px;
+            margin: 40px auto;
         }
 
         .circus-text {
             font-size: 4.5rem;
             font-weight: 900;
             letter-spacing: 3px;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             text-shadow: 
                 3px 3px 0px rgba(0, 0, 0, 0.5),
                 6px 6px 0px rgba(0, 0, 0, 0.3);
@@ -83,6 +88,20 @@
         .yellow {
             color: #FFD600;
             text-shadow: 0 0 20px rgba(255, 214, 0, 0.8);
+        }
+
+        /* Caine image styling */
+        .caine-image {
+            width: 300px;
+            height: auto;
+            margin: 30px auto;
+            animation: caineSpinBounce 3s ease-in-out infinite;
+            filter: drop-shadow(0 0 30px rgba(255, 23, 68, 0.6)) drop-shadow(0 0 20px rgba(0, 184, 255, 0.4));
+        }
+
+        @keyframes caineSpinBounce {
+            0%, 100% { transform: translateY(0) rotate(-2deg); }
+            50% { transform: translateY(-15px) rotate(2deg); }
         }
 
         /* Circus lights */
@@ -188,6 +207,9 @@
             <br>
             <span class="blue">a</span><span class="yellow">d</span><span class="red">v</span><span class="blue">e</span><span class="yellow">n</span><span class="red">t</span><span class="blue">u</span><span class="yellow">r</span><span class="red">e</span>
         </div>
+        
+        <!-- Caine Image -->
+        <img src="https://github.com/CaineRingmasterAI/circus-adventure/raw/main/caine.png" alt="Caine" class="caine-image">
     </div>
 
     <script>
