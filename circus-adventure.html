@@ -93,11 +93,13 @@
         /* Caine image styling */
         .caine-image {
             width: 280px;
-            height: auto;
+            height: 280px;
             margin: 30px auto;
             display: block;
             animation: caineSpinBounce 3s ease-in-out infinite;
             filter: drop-shadow(0 0 30px rgba(255, 23, 68, 0.6)) drop-shadow(0 0 20px rgba(0, 184, 255, 0.4));
+            object-fit: contain;
+            background: transparent;
         }
 
         @keyframes caineSpinBounce {
@@ -210,7 +212,7 @@
         </div>
         
         <!-- Caine Image -->
-        <img src="https://media.tenor.com/9E-h9rKb_4YAAAAC/amazing-digital-circus-caine.gif" alt="Caine" class="caine-image">
+        <img src="https://media.tenor.com/9E-h9rKb_4YAAAAC/amazing-digital-circus-caine.gif" class="caine-image" loading="lazy">
     </div>
 
     <script>
